@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset=utf-8>
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<title>Three.js WEB MAIN DESIGN</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="css/styles.css">
+	<body>
+		<div class="d-navbar">
+			<img id="i-logo" src="textures/logo.png"/>
+			<img id="i-menu" src="textures/menu-icon.png" onclick="menu()"/>
+			<div id="d-menu">
+				<input id="cb-menu" type="checkbox"/>
+				<a href="#"> Enlace 1 </a>
+				<a href="#"> Enlace 1 </a>
+				<a href="#"> Enlace 1 </a>
+				<a href="#"> Enlace 1 </a>
+				<a href="#"> Enlace 1 </a>
+				<a href="#"> Enlace 1 </a>
+			</div>
+		</div>
+		<div id="d-rel-footer">
+			<div id="d-footer">
+				<p id="p-instrucciones"> Desliza para rotar el cubo. Pulsa una seccion para navegar por la web. </p>
+			</di>
+		</div>
+		<script src="js/three.min.js"></script>
+		<script src="js/OrbitControls.js"></script>
+		<script src="js/Detector.js"></script>
+		<script src="js/cubo.js"></script>
+		<script type="text/javascript">
+			function menu(){
+			var left = $('#d-menu').offset().left;
+			if ($("#cb-menu").prop("checked")) {
+				$("#d-menu").css({left:left}).animate({"margin-left":"100%"}, "slow");
+				$("#cb-menu").prop("checked", false);
+			}else{
+				$("#d-menu").css({left:left}).animate({"margin-left":"10%"}, "slow");
+				$("#cb-menu").prop("checked", true);
+			}
+		}
+		</script>
+	</body>
+</html>
